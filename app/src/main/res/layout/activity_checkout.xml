@@ -44,51 +44,16 @@
             android:text="Credit Card"
             android:checked="true"/>
         <RadioButton
-            android:id="@+id/cash"
+            android:id="@+id/octopus"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Cash"/>
+            android:text="Octopus"/>
         <RadioButton
             android:id="@+id/radio_button_3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Apple Pay"/>
     </RadioGroup>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_margin="8dp"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Delivery"
-        android:layout_margin="8dp"
-        />
-
-    <RadioGroup
-        android:id="@+id/delivery"
-        android:checkedButton="@+id/radio_button_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp">
-        <RadioButton
-            android:id="@+id/homeaddress"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Home Address"
-            android:checked="true"/>
-        <RadioButton
-            android:id="@+id/physicalshop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Physical Shop"/>
-    </RadioGroup>
-
 
     <View
         android:layout_width="match_parent"
