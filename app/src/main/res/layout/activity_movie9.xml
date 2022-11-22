@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Movie9">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+            <ImageView
+                android:id="@+id/m9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/m9"
+                tools:ignore="MissingConstraints" />
+            <RatingBar
+                android:id="@+id/bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="true"
+                android:numStars="5"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="The Gentlemen (Distributor: STX Films)
+        \n----------------------------------------------------------------------------------
+
+        \nStory Introduction:
+        \n\nThe Gentlemen is a 2019 British-American action comedy film[5][6][7] written, directed and produced by Guy Ritchie, from a story by Ivan Atkinson, Marn Davies, and Ritchie. The film stars Matthew McConaughey, Charlie Hunnam, Henry Golding, Michelle Dockery, Jeremy Strong, Eddie Marsan, Colin Farrell, and Hugh Grant. It follows an American marijuana kingpin in England who is looking to sell his business, setting off a chain of blackmail and schemes to undermine him.
+        \n\nPrice: $110\n\n"
+
+                android:textSize="18sp"
+                android:padding="8dp"
+                tools:ignore="MissingConstraints" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add product to cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="btn_add"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Movie3">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+
+            <fragment
+                android:name="com.google.android.youtube.player.YouTubePlayerFragment"
+                android:id="@+id/youtube_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:text="The Fast and the Furious: Tokyo Drift \n(Distributor: Universal Pictures)"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="true"
+                android:numStars="5"/>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Price: $45
+                \n\nRelease year: 2006
+                \n\nStory Introduction:
+                \n\nSean Boswell (Black) is an outsider who attempts to define himself as a hot-headed, underdog street racer.  Although racing provides a temporary escape from an unhappy home and the superficial world around him, it has also made Sean unpopular with the local authorities.  To avoid jail time, Sean is sent to live with his gruff, estranged father, a career military-man stationed in Tokyo.  Now officially a gaijin (outsider), Sean feels even more shut out in a land of foreign customs and codes of honor.  But it doesn’t take long for him to find some action when a fellow American buddy, Twinkie (Bow Wow), introduces him to the underground world of drift racing.  Sean’s simple drag racing gets replaced by a rubber-burning, automotive art form—with an exhilarating balance of speeding and gliding through a heart-stopping course of hairpin turns and switchbacks.    On his first time out drifting, Sean unknowingly takes on D.K., the “Drift King,” a local champ with ties to the Japanese crime machine Yakuza.  Sean’s loss comes at a high price tag when he’s forced to work off the debt under the thumb of ex-pat, Han (Kang).  Han soon welcomes Sean into this family of misfits and introduces him to the real principles of drifting.  But when Sean falls for D.K.’s girlfriend, Neela (newcomer Kelley), an explosive series of events is set into motion, climaxing with an ultimate high stakes face off.
+                \n\n"
+                android:textSize="18sp"
+                android:padding="8dp"/>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add product to cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="btn_add"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
