@@ -53,10 +53,12 @@ public class LoginActivity extends AppCompatActivity {
             username = e1.getText().toString();
             password = e2.getText().toString();
             Chkemailpass = db.emailpassword(username,password);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (Chkemailpass == true) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             return null;
         }

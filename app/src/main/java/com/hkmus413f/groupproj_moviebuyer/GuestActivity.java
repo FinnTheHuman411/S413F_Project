@@ -1,6 +1,8 @@
 package com.hkmus413f.groupproj_moviebuyer;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,16 +40,42 @@ public class GuestActivity extends AppCompatActivity {
                 Matcher matcher = pattern.matcher(email);
 
                 if (matcher.matches() == true) {
-                    Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(GuestActivity.this, HomePageActivity.class);      //if login success then jump to Main page
-                    startActivity(i);
-                    finish();
+                    new GuestLoginTask().execute();
                 }
                 else{
                     Toast.makeText(GuestActivity.this, "Wrong email", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    class GuestLoginTask extends AsyncTask<String, Void, String > {
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute(){
+            progressDialog = ProgressDialog.show(GuestActivity.this,
+                    "Logging In",
+                    "Loading, please wait...");
+        }
+
+        @Override
+        protected String doInBackground(String... strings){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s){
+            Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(GuestActivity.this, HomePageActivity.class);      //if login success then jump to Main page
+            startActivity(i);
+            finish();
+        }
     }
 
     @Override

@@ -24,6 +24,9 @@ public class SignUpActivity extends AppCompatActivity {
     Button b1;
     TextView t1;
 
+    String s1,s2,s3,s4;
+    Boolean chkusername;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +44,34 @@ public class SignUpActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new SignUpTask().execute();
+                s1 = e1.getText().toString();
+                s2 = e2.getText().toString();
+                s3 = e3.getText().toString();
+                s4 = e4.getText().toString();
+                chkusername = db.chkusername(s1);
+                if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("")){
+                    Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    if(s3.equals(s4)){
+                        if(chkusername == true){
+                            new SignUpTask().execute();
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(), "User Name Already exists", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }
 
     class SignUpTask extends AsyncTask<String, Void, String > {
         ProgressDialog progressDialog;
-        String s1,s2,s3,s4;
-        Boolean chkusername;
+        Boolean insert;
 
         @Override
         protected void onPreExecute(){
@@ -60,11 +82,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings){
-            s1 = e1.getText().toString();
-            s2 = e2.getText().toString();
-            s3 = e3.getText().toString();
-            s4 = e4.getText().toString();
-            chkusername = db.chkusername(s1);
+            insert = db.insert(s1, s2, s3);
             try {
                 Thread.sleep(2500);
             } catch (InterruptedException e){
@@ -75,25 +93,9 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s){
-            if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("")){
-                Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
-            }
-            else{
-                if(s3.equals(s4)){
-                    if(chkusername == true){
-                        Boolean insert = db.insert(s1, s2, s3);
-                        if (insert ==true){
-                            Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), "User Name Already exists", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
-                }
+            if (insert ==true){
+                Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
     }
