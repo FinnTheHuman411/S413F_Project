@@ -152,6 +152,8 @@ public class HomePageActivity extends AppCompatActivity {
         if(id == R.id.search_bar){
             return true;
         } else if (id == R.id.logout){
+            Intent i = new Intent(HomePageActivity.this, LoginActivity.class);
+            startActivity(i);
             finish();
             return true;
         } else if (id == R.id.user_info){

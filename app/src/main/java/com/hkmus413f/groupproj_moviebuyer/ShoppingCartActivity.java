@@ -68,6 +68,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         if (resultSet.getCount() != 0){
             Intent i = new Intent(this, CheckoutActivity.class);
             startActivity(i);
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "You must add product before checkout.", Toast.LENGTH_SHORT).show();
         }

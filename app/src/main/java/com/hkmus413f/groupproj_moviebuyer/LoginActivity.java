@@ -1,8 +1,11 @@
 package com.hkmus413f.groupproj_moviebuyer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,20 +31,50 @@ public class LoginActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username = e1.getText().toString();
-                String password = e2.getText().toString();
-                Boolean Chkemailpass = db.emailpassword(username,password);
-                if (Chkemailpass == true) {
-                    Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this, HomePageActivity.class);      //if login success then jump to Main page
-                    i.putExtra("username",username);
-                    startActivity(i);
-                }
-                else{
-                    Toast.makeText(LoginActivity.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
-                }
+                new LoginTask().execute();
             }
         });
+    }
+
+    class LoginTask extends AsyncTask<String, Void, String >{
+        String username,password;
+        Boolean Chkemailpass;
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute(){
+            progressDialog = ProgressDialog.show(LoginActivity.this,
+                    "Logging In",
+                    "Loading, please wait...");
+        }
+
+        @Override
+        protected String doInBackground(String... strings){
+            username = e1.getText().toString();
+            password = e2.getText().toString();
+            Chkemailpass = db.emailpassword(username,password);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s){
+            progressDialog.dismiss();
+            if (Chkemailpass == true) {
+                Intent i = new Intent(LoginActivity.this, HomePageActivity.class);      //if login success then jump to Main page
+                i.putExtra("username",username);
+                startActivity(i);
+                Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else{
+                Toast.makeText(LoginActivity.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     public void btn_sign_up(View v){

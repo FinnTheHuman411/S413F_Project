@@ -36,13 +36,6 @@ public class SummaryActivity extends AppCompatActivity {
 
         if (resultSet.getCount() != 0){
             do{
-//                tv.setText(tv.getText() + "\n" +
-//                        resultSet.getString(1) + " " +
-//                        resultSet.getString(2) + " " +
-//                        resultSet.getString(3) + " " +
-//                        resultSet.getString(4)
-//                        );
-
                 cartObjects.add(new cartObject(
                         resultSet.getInt(0),
                         resultSet.getInt(1),
@@ -63,10 +56,9 @@ public class SummaryActivity extends AppCompatActivity {
                 "product_id INTEGER NOT NULL, " +
                 "product_name VARCHAR NOT NULL, " +
                 "count INTEGER NOT NULL," +
-                "price INTEGER NOT NULL" +
+                "price INTEGER NOT NULL," +
+                "image INTEGER NOT NULL" +
                 ");");
-        Intent i = new Intent(this, HomePageActivity.class);
-        startActivity(i);
         finish();
     }
 }

@@ -2,13 +2,16 @@ package com.hkmus413f.groupproj_moviebuyer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -37,9 +40,36 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     public void btn_checkout(View v){
-        Intent i = new Intent(this, SummaryActivity.class);
-        i.putExtra("totalPrice", totalPrice);
-        startActivity(i);
+        new CheckoutTask().execute();
+    }
+
+    class CheckoutTask extends AsyncTask<String, Void, String > {
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute(){
+            progressDialog = ProgressDialog.show(CheckoutActivity.this,
+                    "Checkout in Process",
+                    "Don't close the app!");
+        }
+
+        @Override
+        protected String doInBackground(String... strings){
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s){
+            Intent i = new Intent(CheckoutActivity.this, SummaryActivity.class);
+            i.putExtra("totalPrice", totalPrice);
+            startActivity(i);
+            finish();
+        }
     }
 
     @Override

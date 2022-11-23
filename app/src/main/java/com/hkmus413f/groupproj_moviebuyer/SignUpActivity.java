@@ -3,7 +3,9 @@ package com.hkmus413f.groupproj_moviebuyer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,33 +41,61 @@ public class SignUpActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String s1 = e1.getText().toString();
-                String s2 = e2.getText().toString();
-                String s3 = e3.getText().toString();
-                String s4 = e4.getText().toString();
-                if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("")){
-                    Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    if(s3.equals(s4)){
-                        Boolean chkusername = db.chkusername(s1);
-                        if(chkusername == true){
-                            Boolean insert = db.insert(s1, s2, s3);
-                            if (insert ==true){
-                                Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-                        }
-                        else{
-                            Toast.makeText(getApplicationContext(), "User Name Already exists", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                new SignUpTask().execute();
             }
         });
+    }
+
+    class SignUpTask extends AsyncTask<String, Void, String > {
+        ProgressDialog progressDialog;
+        String s1,s2,s3,s4;
+        Boolean chkusername;
+
+        @Override
+        protected void onPreExecute(){
+            progressDialog = ProgressDialog.show(SignUpActivity.this,
+                    "Creating a new account",
+                    "Loading, please wait...");
+        }
+
+        @Override
+        protected String doInBackground(String... strings){
+            s1 = e1.getText().toString();
+            s2 = e2.getText().toString();
+            s3 = e3.getText().toString();
+            s4 = e4.getText().toString();
+            chkusername = db.chkusername(s1);
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s){
+            if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("")){
+                Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                if(s3.equals(s4)){
+                    if(chkusername == true){
+                        Boolean insert = db.insert(s1, s2, s3);
+                        if (insert ==true){
+                            Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "User Name Already exists", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Password do not match", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     @Override
