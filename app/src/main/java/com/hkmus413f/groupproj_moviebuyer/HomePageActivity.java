@@ -215,7 +215,6 @@ public class HomePageActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.homepagemenu, menu);
         MenuItem searchBar = menu.findItem(R.id.search_bar);
-        MenuItem logoutButton = menu.findItem(R.id.logout);
 
         SearchView searchView = (SearchView) searchBar.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
