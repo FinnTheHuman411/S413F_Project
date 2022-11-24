@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Activity_Movie8">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,13 +18,38 @@
             android:gravity="center_horizontal"
             >
 
-            <ImageView
-                android:id="@+id/m8"
+            <fragment
+                android:name="com.google.android.youtube.player.YouTubePlayerFragment"
+                android:id="@+id/youtube_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/m8"
-                tools:ignore="MissingConstraints" />
+                android:padding="8dp"
+                android:text="Mr. Bean's Holiday\n(Distributor: Universal Pictures)"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RatingBar
                 android:id="@+id/bar"
@@ -34,26 +58,32 @@
                 android:saveEnabled="true"
                 android:numStars="5"/>
 
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tenet (Distributor: Warner Bros)
-        \n----------------------------------------------------------------------------------
-
-        \nStory Introduction:
-        \n\nTenet is a 2020 action-thriller and science fiction film written and directed by Christopher Nolan, who produced it with Emma Thomas. A co-production between the United Kingdom and United States, it stars John David Washington, Robert Pattinson, Elizabeth Debicki, Dimple Kapadia, Michael Caine, and Kenneth Branagh. The plot follows a secret agent (Washington) as he manipulates the flow of time to prevent World War III.
-        \n\nPrice: $120\n\n"
+                android:text="Price: $47
+                \n\nRelease year: 2007
+                \n\nStory Introduction:
+                \n\nWhen London's wet weather becomes too much to bear, pratfall-prone Mr. Bean (Rowan Atkinson) heads to the French Riviera for some fun in the sun. As usual, his plans do not go smoothly, and he is mistaken for both a kidnapper and an award-winning filmmaker when he arrives with a Romanian director's son and an aspiring actress in tow.
+                \n\n"
                 android:textSize="18sp"
-                android:padding="8dp"
-                tools:ignore="MissingConstraints" />
+                android:padding="8dp"/>
+
 
 
 
         </LinearLayout>
 
     </ScrollView>
+
 
 
 

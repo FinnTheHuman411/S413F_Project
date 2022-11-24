@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Movie1">
+    tools:context=".Activity_Movie14">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Laid-Back Camp Movie \n(Distributor: Shochiku)"
+                android:text="Your Name \n(Distributor: Toho)"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -69,10 +69,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price: $85
-                \n\nRelease year: 2022
+                android:text="Price: $69
+                \n\nRelease year: 2017
                 \n\nStory Introduction:
-                \n\nAfter fostering their friendship through camping in high school and going separate ways, a grown-up Nadeshiko Kagamihara, Rin Shima, Chiaki Ohgaki, Aoi Inuyama and Ena Saito reunite to build a campsite.
+                \n\nA teenage boy and girl embark on a quest to meet each other for the first time after they magically swap bodies.
                 \n\n"
                 android:textSize="18sp"
                 android:padding="8dp"/>

@@ -57,7 +57,7 @@ public class Activity_Movie4 extends AppCompatActivity implements YouTubePlayer.
     }
 
     public void btn_add(View v){
-        add_to_shopping_cart(1, 1, "My Little Pony: The Movie", 55, R.drawable.m4);
+        add_to_shopping_cart(4, 1, "My Little Pony: The Movie", 55, R.drawable.m4);
     }
 
     public void add_to_shopping_cart(int product_id, int count, String product_name, int price, int image){

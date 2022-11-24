@@ -29,28 +29,71 @@ public class HomePageActivity extends AppCompatActivity {
     GridView gridView;
 
     String MovieName[] = new String[]{
-            "Laid-Back Camp Movie",
+            "[FEATURED] Laid-Back Camp Movie",
             "F9: The Fast Saga",
             "The Fast And The Furious: Tokyo Drift",
             "My Little Pony: The Movie",
             "Initial D",
             "YuruYuri Nachuyachumi",
+            "Downfall",
+            "Mr. Bean's Holiday",
+            "Avengers: Endgame",
+            "Madagascar",
+            "Frozen II",
+            "Bruce Almighty",
+            "Spider-Man: No Way Home",
+            "Your Name",
+            "Charlie and the Chocolate Factory",
+            "Herbie: Fully Loaded",
+            "The Matrix Resurrections",
+            "My Neighbour Totoro",
+            "Star Wars: The Rise of Skywalker",
+            "Shrek"
     };
+
     String MovieGenre[] = new String[]{
             "Slice of life ",
             "Action",
-            "Racing",
+            "Action",
             "Fantasy",
-            "Racing",
+            "Action",
             "Comedy",
+            "History",
+            "Comedy",
+            "Action",
+            "Comedy",
+            "Fantasy",
+            "Comedy",
+            "Action",
+            "Romantic",
+            "Fantasy",
+            "Sport",
+            "Sci-fi",
+            "Fantasy",
+            "Sci-fi",
+            "Comedy"
     };
     String MoviePrice[] = new String[]{
-            "$80",
+            "$85",
             "$70",
             "$45",
             "$55",
             "$33",
             "$49",
+            "$42",
+            "$47",
+            "$72",
+            "$40",
+            "$71",
+            "$38",
+            "$78",
+            "$69",
+            "$40",
+            "$39",
+            "$82",
+            "$30",
+            "$77",
+            "$36",
     };
     int MovieImages[] = new int[]{
             R.drawable.m1,
@@ -58,7 +101,21 @@ public class HomePageActivity extends AppCompatActivity {
             R.drawable.m3,
             R.drawable.m4,
             R.drawable.m5,
-            R.drawable.m6
+            R.drawable.m6,
+            R.drawable.m7,
+            R.drawable.m8,
+            R.drawable.m9,
+            R.drawable.m10,
+            R.drawable.m11,
+            R.drawable.m12,
+            R.drawable.m13,
+            R.drawable.m14,
+            R.drawable.m15,
+            R.drawable.m16,
+            R.drawable.m17,
+            R.drawable.m18,
+            R.drawable.m19,
+            R.drawable.m20
     };
 
     List<MovieModel> listItems = new ArrayList<>();
@@ -91,30 +148,62 @@ public class HomePageActivity extends AppCompatActivity {
                 if (pos == 0) {
                     Intent intent = new Intent(view.getContext(), Activity_Movie1.class);
                     startActivity(intent);
-                }
-
-                if (pos == 1) {
+                } else if (pos == 1) {
                     Intent intent = new Intent(view.getContext(), Activity_Movie2.class);
                     startActivity(intent);
-                }
-
-                if (pos == 2) {
+                } else if (pos == 2) {
                     Intent intent = new Intent(view.getContext(), Activity_Movie3.class);
                     startActivity(intent);
-                }
-
-                if (pos == 3) {
+                } else if (pos == 3) {
                     Intent intent = new Intent(view.getContext(), Activity_Movie4.class);
                     startActivity(intent);
-                }
-
-                if (pos == 4) {
+                } else if (pos == 4) {
                     Intent intent = new Intent(view.getContext(), Activity_Movie5.class);
                     startActivity(intent);
-                }
-
-                if (pos == 5) {
+                } else if (pos == 5) {
                     Intent intent = new Intent(view.getContext(), Activity_Movie6.class);
+                    startActivity(intent);
+                } else if (pos == 6) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie7.class);
+                    startActivity(intent);
+                } else if (pos == 7) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie8.class);
+                    startActivity(intent);
+                } else if (pos == 8) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie9.class);
+                    startActivity(intent);
+                } else if (pos == 9) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie10.class);
+                    startActivity(intent);
+                } else if (pos == 10) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie11.class);
+                    startActivity(intent);
+                } else if (pos == 11) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie12.class);
+                    startActivity(intent);
+                } else if (pos == 12) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie13.class);
+                    startActivity(intent);
+                } else if (pos == 13) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie14.class);
+                    startActivity(intent);
+                } else if (pos == 14) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie15.class);
+                    startActivity(intent);
+                } else if (pos == 15) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie16.class);
+                    startActivity(intent);
+                } else if (pos == 16) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie17.class);
+                    startActivity(intent);
+                } else if (pos == 17) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie18.class);
+                    startActivity(intent);
+                } else if (pos == 18) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie19.class);
+                    startActivity(intent);
+                } else if (pos == 19) {
+                    Intent intent = new Intent(view.getContext(), Activity_Movie20.class);
                     startActivity(intent);
                 }
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Movie1">
+    tools:context=".Activity_Movie18">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Laid-Back Camp Movie \n(Distributor: Shochiku)"
+                android:text="My Neighbour Totoro \n(Distributor: Toho)"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -69,10 +69,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price: $85
-                \n\nRelease year: 2022
+                android:text="Price: $30
+                \n\nRelease year: 1988
                 \n\nStory Introduction:
-                \n\nAfter fostering their friendship through camping in high school and going separate ways, a grown-up Nadeshiko Kagamihara, Rin Shima, Chiaki Ohgaki, Aoi Inuyama and Ena Saito reunite to build a campsite.
+                \n\nThis acclaimed animated tale by director Hayao Miyazaki follows schoolgirl Satsuke and her younger sister, Mei, as they settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro.
                 \n\n"
                 android:textSize="18sp"
                 android:padding="8dp"/>

@@ -1,30 +1,25 @@
 package com.hkmus413f.groupproj_moviebuyer;
 
-import static com.hkmus413f.groupproj_moviebuyer.YTConfig.getAPI_Key;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RatingBar;
-import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class Activity_Movie3 extends AppCompatActivity implements YouTubePlayer.OnInitializedListener {
+public class Activity_Movie17 extends AppCompatActivity implements YouTubePlayer.OnInitializedListener {
 
-    private static final String VIDEO_ID = "p8HQ2JLlc4E";
+    private static final String VIDEO_ID = "9ix7TUGVYIo";
     private static final int RECOVERY_DIALOG_REQUEST = 1;
     YouTubePlayerFragment myYouTubePlayerFragment;
     Fragment myFragment;
@@ -42,13 +37,13 @@ public class Activity_Movie3 extends AppCompatActivity implements YouTubePlayer.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie3);
+        setContentView(R.layout.activity_movie17);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
         RatingBar bar = (RatingBar)findViewById(R.id.bar);
-        bar.setRating(5);
+        bar.setRating(3);
 
         myYouTubePlayerFragment = (YouTubePlayerFragment)getFragmentManager().findFragmentById(R.id.youtube_fragment);
         myFragment = getSupportFragmentManager().findFragmentById(R.id.youtube_fragment);
@@ -57,7 +52,7 @@ public class Activity_Movie3 extends AppCompatActivity implements YouTubePlayer.
     }
 
     public void btn_add(View v){
-        add_to_shopping_cart(3, 1, "The Fast and the Furious: Tokyo Drift", 45, R.drawable.m3);
+        add_to_shopping_cart(17, 1, "The Matrix Resurrections", 82, R.drawable.m17);
     }
 
     public void add_to_shopping_cart(int product_id, int count, String product_name, int price, int image){

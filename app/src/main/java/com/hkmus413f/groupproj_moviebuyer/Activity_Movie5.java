@@ -57,7 +57,7 @@ public class Activity_Movie5 extends AppCompatActivity implements YouTubePlayer.
     }
 
     public void btn_add(View v){
-        add_to_shopping_cart(1, 1, "Initial D", 33, R.drawable.m5);
+        add_to_shopping_cart(5, 1, "Initial D", 33, R.drawable.m5);
     }
 
     public void add_to_shopping_cart(int product_id, int count, String product_name, int price, int image){

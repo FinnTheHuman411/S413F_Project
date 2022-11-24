@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Movie1">
+    tools:context=".Activity_Movie16">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Laid-Back Camp Movie \n(Distributor: Shochiku)"
+                android:text="Herbie: Fully Loaded \n(Distributor: Buena Vista)"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -69,10 +69,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price: $85
-                \n\nRelease year: 2022
+                android:text="Price: $42
+                \n\nRelease year: 2005
                 \n\nStory Introduction:
-                \n\nAfter fostering their friendship through camping in high school and going separate ways, a grown-up Nadeshiko Kagamihara, Rin Shima, Chiaki Ohgaki, Aoi Inuyama and Ena Saito reunite to build a campsite.
+                \n\nMaggie Peyton (Lindsay Lohan) wants to become a NASCAR driver but her overprotective father, Ray Peyton Sr. (Michael Keaton), won't hear of it. A former racer himself, Ray wants Maggie to take a lucrative TV sportscasting job and leave the driving to her crash-prone brother (Breckin Meyer). When Ray Sr. takes Maggie to a junkyard to pick out a car, she has no idea that the little Volkswagen Beetle -- named Herbie -- she takes home will change her life.
                 \n\n"
                 android:textSize="18sp"
                 android:padding="8dp"/>

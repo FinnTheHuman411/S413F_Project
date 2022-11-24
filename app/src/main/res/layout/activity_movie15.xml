@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Movie1">
+    tools:context=".Activity_Movie15">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Laid-Back Camp Movie \n(Distributor: Shochiku)"
+                android:text="Charlie and the Chocolate Factory \n(Distributor: 	Warner Bros)"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -55,8 +55,9 @@
                 android:id="@+id/bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:numStars="5"
                 android:saveEnabled="true"
-                android:numStars="5"/>
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <View
                 android:id="@+id/divider3"
@@ -69,10 +70,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price: $85
-                \n\nRelease year: 2022
+                android:text="Price: $40
+                \n\nRelease year: 2005
                 \n\nStory Introduction:
-                \n\nAfter fostering their friendship through camping in high school and going separate ways, a grown-up Nadeshiko Kagamihara, Rin Shima, Chiaki Ohgaki, Aoi Inuyama and Ena Saito reunite to build a campsite.
+                \n\nBased on the beloved Roald Dahl tale, this comedic and fantastical film follows young Charlie Bucket (Freddie Highmore) and his Grandpa Joe (David Kelly) as they join a small group of contest winners who get to tour the magical and mysterious factory of eccentric candy maker Willy Wonka (Johnny Depp). Aided by his diminutive Oompa Loompa workers (Deep Roy), Wonka has a hidden motivation for the tour, one that he will reveal only after the children in the group show their true colors.
                 \n\n"
                 android:textSize="18sp"
                 android:padding="8dp"/>

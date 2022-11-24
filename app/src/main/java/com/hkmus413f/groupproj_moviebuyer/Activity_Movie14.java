@@ -1,30 +1,25 @@
 package com.hkmus413f.groupproj_moviebuyer;
 
-import static com.hkmus413f.groupproj_moviebuyer.YTConfig.getAPI_Key;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RatingBar;
-import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class Activity_Movie3 extends AppCompatActivity implements YouTubePlayer.OnInitializedListener {
+public class Activity_Movie14 extends AppCompatActivity implements YouTubePlayer.OnInitializedListener {
 
-    private static final String VIDEO_ID = "p8HQ2JLlc4E";
+    private static final String VIDEO_ID = "xU47nhruN-Q";
     private static final int RECOVERY_DIALOG_REQUEST = 1;
     YouTubePlayerFragment myYouTubePlayerFragment;
     Fragment myFragment;
@@ -42,7 +37,7 @@ public class Activity_Movie3 extends AppCompatActivity implements YouTubePlayer.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie3);
+        setContentView(R.layout.activity_movie14);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -57,7 +52,7 @@ public class Activity_Movie3 extends AppCompatActivity implements YouTubePlayer.
     }
 
     public void btn_add(View v){
-        add_to_shopping_cart(3, 1, "The Fast and the Furious: Tokyo Drift", 45, R.drawable.m3);
+        add_to_shopping_cart(14, 1, "Your Name", 69, R.drawable.m14);
     }
 
     public void add_to_shopping_cart(int product_id, int count, String product_name, int price, int image){

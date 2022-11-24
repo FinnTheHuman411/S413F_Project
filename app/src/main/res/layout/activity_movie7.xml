@@ -18,40 +18,72 @@
             android:gravity="center_horizontal"
             >
 
-            <ImageView
-                android:id="@+id/m7"
+            <fragment
+                android:name="com.google.android.youtube.player.YouTubePlayerFragment"
+                android:id="@+id/youtube_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/m7"
-                tools:ignore="MissingConstraints" />
+                android:padding="8dp"
+                android:text="Downfall \n(Distributor: Newmarket)"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
             <RatingBar
                 android:id="@+id/bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:saveEnabled="true"
                 android:numStars="5"/>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Onward (Distributor: Disney)
-        \n----------------------------------------------------------------------------------
-
-        \nStory Introduction:
-        \n\nOnward is a 2020 American computer-animated urban fantasy-adventure film produced by Pixar Animation Studios and released by Walt Disney Pictures. The film is directed by Dan Scanlon, produced by Kori Rae and written by Scanlon, Jason Headley, and Keith Bunin, and stars the voices of Tom Holland, Chris Pratt, Julia Louis-Dreyfus, and Octavia Spencer. Set in a suburban fantasy world, the film follows two elf brothers who set out on a quest to find an artifact that will temporarily bring back their deceased father.
-        \n\nPrice: $80\n\n"
-
+                android:text="Price: $42
+                \n\nRelease year: 2004
+                \n\nStory Introduction:
+                \n\nIn 1942, young Traudl Junge (Alexandra Maria Lara) lands her dream job -- secretary to Adolf Hitler (Bruno Ganz) at the peak of his power. Three years later, Hitler's empire is now his underground bunker. The real-life Traudl narrates Hitler's final days as he rages against imagined betrayers and barks orders to phantom armies, while his mistress, Eva Braun (Juliane Köhler), clucks over his emotional distance, and other infamous Nazis prepare for the end.
+                \n\n"
                 android:textSize="18sp"
-                android:padding="8dp"
-                tools:ignore="MissingConstraints" />
+                android:padding="8dp"/>
+
 
 
 
         </LinearLayout>
 
     </ScrollView>
+
 
 
 

@@ -57,7 +57,7 @@ public class Activity_Movie2 extends AppCompatActivity implements YouTubePlayer.
     }
 
     public void btn_add(View v){
-        add_to_shopping_cart(1, 1, "F9: The Fast Saga", 70, R.drawable.m2);
+        add_to_shopping_cart(2, 1, "F9: The Fast Saga", 70, R.drawable.m2);
     }
 
     public void add_to_shopping_cart(int product_id, int count, String product_name, int price, int image){
