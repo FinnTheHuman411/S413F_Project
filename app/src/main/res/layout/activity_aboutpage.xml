@@ -60,7 +60,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Made by \nBenson (s1239399)\nSam (s1279183)\nKingson (s1255665)"
+                android:text="Made by \n Lam Chiu Yuen (12393992)\nWong Yung Keung (12791830)\nHE Jingshen (12556656)"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textStyle="bold" />
