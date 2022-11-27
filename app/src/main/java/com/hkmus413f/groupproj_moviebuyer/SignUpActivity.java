@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SignUpActivity extends AppCompatActivity {
 
     DatabaseHelper db;
@@ -47,17 +50,25 @@ public class SignUpActivity extends AppCompatActivity {
                 s3 = e3.getText().toString();
                 s4 = e4.getText().toString();
                 s5 = e5.getText().toString();
+
                 chkusername = db.chkusername(s1);
+
+                String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+                Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(s2);
+
                 if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("") || s5.equals("")){
                     Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     if(s4.equals(s5)){
-                        if(chkusername == true){
-                            new SignUpTask().execute();
-                        }
-                        else{
+                        if(chkusername == false){
                             Toast.makeText(getApplicationContext(), "User Name Already exists", Toast.LENGTH_SHORT).show();
+                        }
+                        else if (matcher.matches() == false){
+                            Toast.makeText(getApplicationContext(), "Invalid email format", Toast.LENGTH_SHORT).show();
+                        } else {
+                            new SignUpTask().execute();
                         }
                     }
                     else {
@@ -92,6 +103,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s){
+            progressDialog.dismiss();
             if (insert ==true){
                 Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
                 finish();

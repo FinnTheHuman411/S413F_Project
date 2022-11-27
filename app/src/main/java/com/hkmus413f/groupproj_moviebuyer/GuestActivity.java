@@ -43,7 +43,7 @@ public class GuestActivity extends AppCompatActivity {
                     new GuestLoginTask().execute();
                 }
                 else{
-                    Toast.makeText(GuestActivity.this, "Wrong email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GuestActivity.this, "Invalid email format", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -71,6 +71,7 @@ public class GuestActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s){
+            progressDialog.dismiss();
             Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(GuestActivity.this, HomePageActivity.class);      //if login success then jump to Main page
             startActivity(i);
