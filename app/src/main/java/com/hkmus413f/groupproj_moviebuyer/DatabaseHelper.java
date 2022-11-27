@@ -15,7 +15,7 @@ import java.util.Random;
 public class DatabaseHelper extends SQLiteOpenHelper {
     Context mContext;
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "Login.db", null, 1);
+        super(context, "Users.db", null, 1);
         mContext = context;
     }
 
@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user(id int, username text primary key, password text, age int, credits int )");
+        db.execSQL("Create table user(id int, username text primary key, email text, password text, age int, credits int )");
     }
 
     @Override
@@ -32,26 +32,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists user");
     }
     //inserting in database
-    public boolean insert(String username, String age,  String password){
+    public boolean insert(String username, String email, String age,  String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("id", id);
         contentValues.put("username", username);
+        contentValues.put("email", email);
         contentValues.put("password", password);
         contentValues.put("age", age);
         contentValues.put("credits", randomC);
         long ins =db.insert("user", null, contentValues);
         if (ins == -1) return false;
-        else return  true;
+        else return true;
     }
-    //checking if email exists;
+    //checking if username exists;
     public Boolean chkusername(String username){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where username=?", new String [] {username});
         if (cursor.getCount() > 0) return false;
         else return true;
     }
-    //checking the email and password
+    //checking the username and password
     public Boolean emailpassword(String username, String password){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where username=? and password=?", new String[]{username,password});

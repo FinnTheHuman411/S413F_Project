@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
         cart.execSQL("DROP TABLE IF EXISTS cart;");
         cart.execSQL("CREATE TABLE IF NOT EXISTS cart(" +

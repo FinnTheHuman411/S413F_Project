@@ -17,14 +17,11 @@ import android.widget.Toast;
 public class SignUpActivity extends AppCompatActivity {
 
     DatabaseHelper db;
-    EditText e1;
-    EditText e2;
-    EditText e3;
-    EditText e4;
+    EditText e1, e2, e3, e4, e5;
     Button b1;
     TextView t1;
 
-    String s1,s2,s3,s4;
+    String s1,s2,s3,s4, s5;
     Boolean chkusername;
 
     @Override
@@ -37,9 +34,10 @@ public class SignUpActivity extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
         e1 = (EditText)findViewById(R.id.username);
-        e2 = (EditText)findViewById(R.id.age);
-        e3 = (EditText)findViewById(R.id.pass);
-        e4 = (EditText)findViewById(R.id.cpass);
+        e2 = (EditText)findViewById(R.id.email);
+        e3 = (EditText)findViewById(R.id.age);
+        e4 = (EditText)findViewById(R.id.pass);
+        e5 = (EditText)findViewById(R.id.cpass);
         b1 = (Button) findViewById(R.id.register);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,12 +46,13 @@ public class SignUpActivity extends AppCompatActivity {
                 s2 = e2.getText().toString();
                 s3 = e3.getText().toString();
                 s4 = e4.getText().toString();
+                s5 = e5.getText().toString();
                 chkusername = db.chkusername(s1);
-                if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("")){
+                if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("") || s5.equals("")){
                     Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    if(s3.equals(s4)){
+                    if(s4.equals(s5)){
                         if(chkusername == true){
                             new SignUpTask().execute();
                         }
@@ -82,7 +81,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings){
-            insert = db.insert(s1, s2, s3);
+            insert = db.insert(s1, s2, s3, s4);
             try {
                 Thread.sleep(2500);
             } catch (InterruptedException e){

@@ -14,10 +14,6 @@ import android.widget.Toast;
 
 public class UserInfoActivity extends AppCompatActivity {
 
-    TextView tv1;
-    TextView tv2;
-    TextView tv3;
-    Button b1;
     DatabaseHelper db;
 
     @Override
@@ -38,6 +34,7 @@ public class UserInfoActivity extends AppCompatActivity {
             } else {
                 TextView userID = findViewById(R.id.tv_userinfo_id);
                 TextView userName = findViewById(R.id.tv_userinfo_username);
+                TextView userEmail = findViewById(R.id.tv_userinfo_em);
                 TextView userPW = findViewById(R.id.tv_userinfo_pw);
                 TextView userAge = findViewById(R.id.tv_userinfo_age);
                 TextView userCredit = findViewById(R.id.tv_userinfo_credit);
@@ -45,9 +42,10 @@ public class UserInfoActivity extends AppCompatActivity {
                 while (res.moveToNext()){
                     userID.setText(res.getString(0));
                     userName.setText(res.getString(1));
-                    userPW.setText(res.getString(2));
-                    userAge.setText(res.getString(3));
-                    userCredit.setText(res.getString(4));
+                    userEmail.setText(res.getString(2));
+                    userPW.setText(res.getString(3));
+                    userAge.setText(res.getString(4));
+                    userCredit.setText(res.getString(5));
                 }
             }
         }

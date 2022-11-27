@@ -349,9 +349,10 @@ public class HomePageActivity extends AppCompatActivity {
         while (res.moveToNext()){
             buffer.append("ID: " + res.getString(0) + "\n");
             buffer.append("Name: " + res.getString(1) + "\n");
-            buffer.append("Password: " + res.getString(2) + "\n");
-            buffer.append("Age: " + res.getString(3) + "\n");
-            buffer.append("Credit: " + res.getString(4) + "\n");
+            buffer.append("Email: " + res.getString(2) + "\n");
+            buffer.append("Password: " + res.getString(3) + "\n");
+            buffer.append("Age: " + res.getString(4) + "\n");
+            buffer.append("Credit: " + res.getString(5) + "\n");
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(HomePageActivity.this);
         builder.setCancelable(true);
